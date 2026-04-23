@@ -90,7 +90,7 @@ app.post('/api/payment/token', async (req, res) => {
   };
 
   let basePrice = prices[layout] || 2000; // <--- Default jika error jadi 2000
-  let discount = 0;F
+  let discount = 0;
 
   if (promoCode && promoCodes[promoCode]) {
     const promo = promoCodes[promoCode];
