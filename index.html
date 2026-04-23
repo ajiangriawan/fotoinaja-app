@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FotoinAja — Foto Booth Aesthetic untuk Anak Muda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,300&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#">📸 FotoinAja</a>
+      <div class="nav-links">
+        <a href="#themes">Tema</a>
+        <a href="#how">Cara Pakai</a>
+        <a href="#booth" class="btn-nav">Mulai Foto ✨</a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#themes" onclick="toggleMenu()">Tema</a>
+      <a href="#how" onclick="toggleMenu()">Cara Pakai</a>
+      <a href="#booth" class="btn-nav-mobile" onclick="toggleMenu()">Mulai Foto ✨</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="badge anim-fade-up" style="--d:0s">✨ Foto Booth Digital #1 Indonesia</div>
+      <h1 class="anim-fade-up" style="--d:.1s">Bikin Foto<br><span class="gradient-text">Super Aesthetic</span><br>Dalam
+        Detik!</h1>
+      <p class="anim-fade-up" style="--d:.2s">Upload foto, pilih tema, tambah stiker & filter AI, download langsung.
+        Mulai dari <strong>Rp 2.000</strong> aja!</p>
+      <div class="hero-btns anim-fade-up" style="--d:.3s">
+        <a href="#booth" class="btn-primary btn-glow">🎉 Coba Sekarang</a>
+        <a href="#how" class="btn-ghost">Lihat Cara Pakai</a>
+      </div>
+      <div class="hero-stats anim-fade-up" style="--d:.4s">
+        <div class="stat"><span>50K+</span><small>Foto Dibuat</small></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span>8+</span><small>Tema Keren</small></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span>11+</span><small>Layout Pilihan</small></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span>4.9★</span><small>Rating</small></div>
+      </div>
+    </div>
+    <div class="hero-visual anim-fade-up" style="--d:.15s">
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="photo-strip-demo">
+            <div class="strip-frame-demo kawaii-demo">🎀<span>Kawaii</span></div>
+            <div class="strip-frame-demo y2k-demo">⭐<span>Y2K</span></div>
+            <div class="strip-frame-demo pastel-demo">🌸<span>Pastel</span></div>
+            <div class="strip-frame-demo dark-demo">🌙<span>Dark</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-float-badge badge-1">HD Quality ✨</div>
+      <div class="hero-float-badge badge-2">🔒 Privasi Aman</div>
+    </div>
+  </section>
+
+  <!-- THEMES SECTION -->
+  <section class="themes-section" id="themes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🎨 Koleksi Tema</span>
+        <h2>Pilih Vibes Kamu!</h2>
+        <p>Dari kawaii sampai dark academia — semua ada di sini.</p>
+      </div>
+      <div class="themes-grid">
+        <div class="theme-card" data-theme="kawaii" onclick="selectThemeAndGo('kawaii')">
+          <div class="theme-preview kawaii-bg">
+            <div class="theme-frame-demo">🎀</div>
+            <span class="theme-tag hot">TERPOPULER</span>
+          </div>
+          <div class="theme-info">
+            <span class="theme-emoji">🎀</span>
+            <h3>Kawaii Gemoy</h3>
+            <p>Cute overload! Stiker kucing, pita, dan warna pastel yang bikin gemes</p>
+          </div>
+        </div>
+        <div class="theme-card" data-theme="y2k" onclick="selectThemeAndGo('y2k')">
+          <div class="theme-preview y2k-bg">
+            <div class="theme-frame-demo">💫</div>
+            <span class="theme-tag trend">TRENDING</span>
+          </div>
+          <div class="theme-info">
+            <span class="theme-emoji">⭐</span>
+            <h3>Y2K Retro</h3>
+            <p>Chrome, butterfly, holographic vibes dari era 2000an yang lagi balik</p>
+          </div>
+        </div>
+        <div class="theme-card" data-theme="pastel" onclick="selectThemeAndGo('pastel')">
+          <div class="theme-preview pastel-bg">
+            <div class="theme-frame-demo">🌸</div>
+          </div>
+          <div class="theme-info">
+            <span class="theme-emoji">🌷</span>
+            <h3>Korean Pastel</h3>
+            <p>Soft, dreamy, aesthetic ala Korea yang bikin FYP</p>
+          </div>
+        </div>
+        <div class="theme-card" data-theme="dark" onclick="selectThemeAndGo('dark')">
+          <div class="theme-preview dark-bg">
+            <div class="theme-frame-demo">🌙</div>
+          </div>
+          <div class="theme-info">
+            <span class="theme-emoji">🖤</span>
+            <h3>Dark Academia</h3>
+            <p>Elegan, moody, vibes buku antik dan perpustakaan tua</p>
+          </div>
+        </div>
+        <div class="theme-card" data-theme="gaming" onclick="selectThemeAndGo('gaming')">
+          <div class="theme-preview gaming-bg">
+            <div class="theme-frame-demo">🎮</div>
+            <span class="theme-tag new">BARU!</span>
+          </div>
+          <div class="theme-info">
+            <span class="theme-emoji">🕹️</span>
+            <h3>Gaming Neon</h3>
+            <p>Pixel art, neon colors, vibe gamer yang kece banget</p>
+          </div>
+        </div>
+        <div class="theme-card" data-theme="flower" onclick="selectThemeAndGo('flower')">
+          <div class="theme-preview flower-bg">
+            <div class="theme-frame-demo">🌻</div>
+          </div>
+          <div class="theme-info">
+            <span class="theme-emoji">🌿</span>
+            <h3>Cottagecore</h3>
+            <p>Bunga liar, daun hijau, vintage vibes yang serasa di padang bunga</p>
+          </div>
+        </div>
+        <div class="theme-card" data-theme="sunset" onclick="selectThemeAndGo('sunset')">
+          <div class="theme-preview sunset-bg">
+            <div class="theme-frame-demo">🌅</div>
+            <span class="theme-tag new">BARU!</span>
+          </div>
+          <div class="theme-info">
+            <span class="theme-emoji">🔥</span>
+            <h3>Sunset Vibes</h3>
+            <p>Dramatis, hangat, gradien matahari terbenam yang memukau</p>
+          </div>
+        </div>
+        <div class="theme-card" data-theme="minimal" onclick="selectThemeAndGo('minimal')">
+          <div class="theme-preview minimal-bg">
+            <div class="theme-frame-demo">◆</div>
+          </div>
+          <div class="theme-info">
+            <span class="theme-emoji">⬛</span>
+            <h3>Clean Minimal</h3>
+            <p>Bersih, hitam putih, elegan dan timeless</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">📖 Cara Pakai</span>
+        <h2>Gampang Banget, Cuma 4 Langkah!</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon">📷</div>
+          <h3>Upload Foto</h3>
+          <p>Upload foto atau pakai kamera. Format JPG, PNG, HEIC — maks 15MB per foto.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon">✨</div>
+          <h3>Edit & Dekorasi</h3>
+          <p>Pilih tema, layout collage, tambah stiker drag-drop, filter AI, dan teks custom.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon">💳</div>
+          <h3>Bayar Aman</h3>
+          <p>Bayar via Midtrans — GoPay, OVO, Dana, kartu kredit, dan 100+ metode lainnya.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <div class="step-icon">⬇️</div>
+          <h3>Download HD!</h3>
+          <p>Foto HD tanpa watermark langsung ter-download ke perangkat kamu. Siap share ke IG!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">💰 Harga</span>
+        <h2>Murah, Meriah, Berkualitas!</h2>
+        <p>Punya kode promo? Bisa hemat lebih banyak lagi!</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-icon">🌟</div>
+          <h3>Single / Polaroid</h3>
+          <div class="price">Rp 2.000<small>–3.000</small></div>
+          <ul>
+            <li>✅ 1 foto dengan tema pilihan</li>
+            <li>✅ Filter AI basic</li>
+            <li>✅ Stiker & teks custom</li>
+            <li>✅ Resolusi HD 2000px</li>
+          </ul>
+          <a href="#booth" class="btn-price">Pilih Ini</a>
+        </div>
+        <div class="price-card featured">
+          <div class="popular-badge">⚡ PALING POPULER</div>
+          <div class="price-icon">✨</div>
+          <h3>Photo Strip</h3>
+          <div class="price">Rp 4.000<small>–8.000</small></div>
+          <ul>
+            <li>✅ Strip 2 / 3 / 4 / 6 foto</li>
+            <li>✅ Filter AI premium</li>
+            <li>✅ Stiker unlimited</li>
+            <li>✅ Resolusi Ultra HD</li>
+            <li>✅ Teks & font custom</li>
+          </ul>
+          <a href="#booth" class="btn-price featured-btn">Pilih Ini ✨</a>
+        </div>
+        <div class="price-card">
+          <div class="price-icon">🎉</div>
+          <h3>Grid / Collage</h3>
+          <div class="price">Rp 6.000<small>–10.000</small></div>
+          <ul>
+            <li>✅ Grid 2×2, 2×3, 3×3</li>
+            <li>✅ Collage 5 foto kreatif</li>
+            <li>✅ Semua filter AI</li>
+            <li>✅ Print-ready 4R</li>
+          </ul>
+          <a href="#booth" class="btn-price">Pilih Ini</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ MAIN BOOTH APP ══════════════════ -->
+  <section class="booth-section" id="booth">
+    <div class="container-wide">
+      <div class="section-header">
+        <span class="section-badge">📸 Studio Foto</span>
+        <h2>Buat Foto Kamu Sekarang!</h2>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="booth-progress">
+        <div class="progress-step active" id="prog1">
+          <div class="prog-dot"><span>1</span></div>
+          <div class="prog-label">Upload</div>
+        </div>
+        <div class="progress-line" id="line1"></div>
+        <div class="progress-step" id="prog2">
+          <div class="prog-dot"><span>2</span></div>
+          <div class="prog-label">Tema</div>
+        </div>
+        <div class="progress-line" id="line2"></div>
+        <div class="progress-step" id="prog3">
+          <div class="prog-dot"><span>3</span></div>
+          <div class="prog-label">Dekorasi</div>
+        </div>
+        <div class="progress-line" id="line3"></div>
+        <div class="progress-step" id="prog4">
+          <div class="prog-dot"><span>4</span></div>
+          <div class="prog-label">Bayar</div>
+        </div>
+        <div class="progress-line" id="line4"></div>
+        <div class="progress-step" id="prog5">
+          <div class="prog-dot"><span>5</span></div>
+          <div class="prog-label">Download</div>
+        </div>
+      </div>
+
+      <div class="booth-app" id="boothApp">
+
+        <!-- ── STEP 1: Upload ── -->
+        <div class="booth-step active" id="step1">
+          <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" accept="image/*" multiple style="display:none"
+              onchange="handleFiles(this.files)">
+            <div class="upload-content">
+              <div class="upload-icon-wrap">
+                <div class="upload-icon">📷</div>
+              </div>
+              <h3>Upload Foto Kamu!</h3>
+              <p>Drag &amp; drop atau klik untuk pilih foto</p>
+              <p class="upload-hint">JPG, PNG, HEIC • Maks 15MB per foto • Upload hingga 9 foto</p>
+              <div class="upload-btns">
+                <button class="btn-upload" onclick="document.getElementById('fileInput').click()">
+                  🖼 Pilih dari Galeri
+                </button>
+                <button class="btn-camera" onclick="startCamera()">
+                  📸 Gunakan Kamera
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Camera -->
+          <div class="camera-container" id="cameraContainer" style="display:none">
+            <video id="cameraVideo" autoplay playsinline></video>
+            <div class="camera-controls">
+              <button onclick="stopCamera()" class="cam-close-btn">✕</button>
+              <button onclick="capturePhoto()" class="capture-btn">📸</button>
+              <div class="cam-spacer"></div>
+            </div>
+          </div>
+
+          <!-- Preview uploaded -->
+          <div class="uploaded-preview" id="uploadedPreview" style="display:none">
+            <h3>Foto Siap! 🎉</h3>
+            <div class="preview-grid" id="previewGrid"></div>
+
+            <div class="upload-add-more" style="display: flex; gap: 8px; justify-content: center;">
+              <button onclick="document.getElementById('fileInput').click()" class="btn-add-more">🖼 Tambah
+                Galeri</button>
+              <button onclick="startCamera()" class="btn-add-more">📸 Tambah Kamera</button>
+            </div>
+
+            <div class="upload-actions">
+              <button onclick="clearUploads()" class="btn-ghost-sm">🗑 Hapus Semua</button>
+              <button onclick="goToStep(2)" class="btn-primary">Lanjut — Pilih Tema ➜</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 2: Theme & Layout ── -->
+        <div class="booth-step" id="step2">
+          <div class="step2-layout">
+            <!-- Sidebar -->
+            <div class="step-sidebar">
+              <div class="sidebar-section">
+                <h4 class="sidebar-title">🎨 Tema</h4>
+                <div class="theme-selector" id="themeSelectorBooth">
+                  <div class="theme-opt active" data-theme="kawaii" onclick="setTheme('kawaii')"><span>🎀</span> Kawaii
+                    Gemoy</div>
+                  <div class="theme-opt" data-theme="y2k" onclick="setTheme('y2k')"><span>⭐</span> Y2K Retro</div>
+                  <div class="theme-opt" data-theme="pastel" onclick="setTheme('pastel')"><span>🌸</span> Korean Pastel
+                  </div>
+                  <div class="theme-opt" data-theme="dark" onclick="setTheme('dark')"><span>🌙</span> Dark Academia
+                  </div>
+                  <div class="theme-opt" data-theme="gaming" onclick="setTheme('gaming')"><span>🎮</span> Gaming Neon
+                  </div>
+                  <div class="theme-opt" data-theme="flower" onclick="setTheme('flower')"><span>🌿</span> Cottagecore
+                  </div>
+                  <div class="theme-opt" data-theme="sunset" onclick="setTheme('sunset')"><span>🌅</span> Sunset Vibes
+                  </div>
+                  <div class="theme-opt" data-theme="minimal" onclick="setTheme('minimal')"><span>◆</span> Clean Minimal
+                  </div>
+                </div>
+              </div>
+
+              <div class="sidebar-section">
+                <h4 class="sidebar-title">📐 Layout</h4>
+                <div class="layout-selector" id="layoutSelector">
+                  <!-- Strip group -->
+                  <div class="layout-group-label">Single</div>
+                  <div class="layout-row">
+                    <div class="layout-opt active" data-layout="single" onclick="setLayout('single')">
+                      <div class="layout-icon"></div><span>Single</span>
+                    </div>
+                    <div class="layout-opt" data-layout="polaroid" onclick="setLayout('polaroid')">
+                      <div class="layout-icon"></div><span>Polaroid</span>
+                    </div>
+                  </div>
+                  <div class="layout-group-label">Strip</div>
+                  <div class="layout-row">
+                    <div class="layout-opt" data-layout="strip2" onclick="setLayout('strip2')">
+                      <div class="layout-icon"></div><span>Strip 2</span>
+                    </div>
+                    <div class="layout-opt" data-layout="strip3" onclick="setLayout('strip3')">
+                      <div class="layout-icon"></div><span>Strip 3</span>
+                    </div>
+                    <div class="layout-opt" data-layout="strip4" onclick="setLayout('strip4')">
+                      <div class="layout-icon"></div><span>Strip 4</span>
+                    </div>
+                    <div class="layout-opt" data-layout="strip6" onclick="setLayout('strip6')">
+                      <div class="layout-icon"></div><span>Strip 6</span>
+                    </div>
+                  </div>
+                  <div class="layout-group-label">Grid</div>
+                  <div class="layout-row">
+                    <div class="layout-opt" data-layout="grid4" onclick="setLayout('grid4')">
+                      <div class="layout-icon"></div><span>Grid 2×2</span>
+                    </div>
+                    <div class="layout-opt" data-layout="grid6" onclick="setLayout('grid6')">
+                      <div class="layout-icon"></div><span>Grid 2×3</span>
+                    </div>
+                    <div class="layout-opt" data-layout="grid9" onclick="setLayout('grid9')">
+                      <div class="layout-icon"></div><span>Grid 3×3</span>
+                    </div>
+                  </div>
+                  <div class="layout-group-label">Kreatif</div>
+                  <div class="layout-row">
+                    <div class="layout-opt" data-layout="triptych" onclick="setLayout('triptych')">
+                      <div class="layout-icon"></div><span>Triptych</span>
+                    </div>
+                    <div class="layout-opt" data-layout="collage5" onclick="setLayout('collage5')">
+                      <div class="layout-icon"></div><span>Collage 5</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Preview canvas -->
+            <div class="step-preview">
+              <div class="canvas-wrapper" id="mainCanvasWrapper">
+                <canvas id="mainCanvas"></canvas>
+                <div class="preview-badge">PREVIEW</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button onclick="goToStep(1)" class="btn-back">← Kembali</button>
+            <button onclick="goToStep(3)" class="btn-primary">Dekorasi ➜</button>
+          </div>
+        </div>
+
+        <!-- ── STEP 3: Decorate ── -->
+        <div class="booth-step" id="step3">
+          <div class="decor-layout">
+            <!-- Tools sidebar -->
+            <div class="decor-sidebar">
+              <div class="decor-tabs">
+                <button class="decor-tab active" onclick="switchTab('filter')">🪄 Filter</button>
+                <button class="decor-tab" onclick="switchTab('sticker')">🎀 Stiker</button>
+                <button class="decor-tab" onclick="switchTab('text')">✍️ Teks</button>
+              </div>
+
+              <!-- Filter Tab -->
+              <div class="tab-content active" id="tab-filter">
+                <div class="filter-grid">
+                  <div class="filter-item active" onclick="applyFilter('none')" data-filter="none">
+                    <div class="filter-thumb fi-none">Ori</div><span>Original</span>
+                  </div>
+                  <div class="filter-item" onclick="applyFilter('beauty')" data-filter="beauty">
+                    <div class="filter-thumb fi-beauty">✨</div><span>Beauty</span>
+                  </div>
+                  <div class="filter-item" onclick="applyFilter('warm')" data-filter="warm">
+                    <div class="filter-thumb fi-warm">🌅</div><span>Warm</span>
+                  </div>
+                  <div class="filter-item" onclick="applyFilter('cool')" data-filter="cool">
+                    <div class="filter-thumb fi-cool">❄️</div><span>Cool</span>
+                  </div>
+                  <div class="filter-item" onclick="applyFilter('vintage')" data-filter="vintage">
+                    <div class="filter-thumb fi-vintage">📷</div><span>Vintage</span>
+                  </div>
+                  <div class="filter-item" onclick="applyFilter('vivid')" data-filter="vivid">
+                    <div class="filter-thumb fi-vivid">🌈</div><span>Vivid</span>
+                  </div>
+                  <div class="filter-item" onclick="applyFilter('mono')" data-filter="mono">
+                    <div class="filter-thumb fi-mono">⬛</div><span>B&amp;W</span>
+                  </div>
+                  <div class="filter-item" onclick="applyFilter('soft')" data-filter="soft">
+                    <div class="filter-thumb fi-soft">🌸</div><span>Soft</span>
+                  </div>
+                </div>
+                <div class="filter-sliders">
+                  <div class="slider-row">
+                    <label>✨ Beauty AI <span id="beautyVal">0</span>%</label>
+                    <input type="range" min="0" max="100" value="0" id="beautySlider"
+                      oninput="updateBeauty(this.value)">
+                  </div>
+                  <div class="slider-row">
+                    <label>☀️ Brightness <span id="brightVal">0</span></label>
+                    <input type="range" min="-100" max="100" value="0" id="brightSlider"
+                      oninput="updateBrightness(this.value)">
+                  </div>
+                  <div class="slider-row">
+                    <label>🎨 Saturation <span id="satVal">100</span>%</label>
+                    <input type="range" min="0" max="200" value="100" id="satSlider"
+                      oninput="updateSaturation(this.value)">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sticker Tab -->
+              <div class="tab-content" id="tab-sticker">
+                <div class="sticker-categories">
+                  <button class="sticker-cat active" onclick="loadStickers('cute')">Cute</button>
+                  <button class="sticker-cat" onclick="loadStickers('food')">Food</button>
+                  <button class="sticker-cat" onclick="loadStickers('nature')">Alam</button>
+                  <button class="sticker-cat" onclick="loadStickers('emoji')">Emoji</button>
+                  <button class="sticker-cat" onclick="loadStickers('shape')">Shape</button>
+                </div>
+                <div class="sticker-grid" id="stickerGrid"></div>
+                <p class="sticker-hint">Klik stiker untuk tambah. Drag untuk pindah!</p>
+              </div>
+
+              <!-- Text Tab -->
+              <div class="tab-content" id="tab-text">
+                <div class="text-controls">
+                  <textarea id="textInput" placeholder="Tulis teks di sini..." rows="3"></textarea>
+                  <div class="text-options">
+                    <div class="text-opt-group">
+                      <label>Font</label>
+                      <select id="fontSelect" onchange="updateTextStyle()">
+                        <option value="Pacifico">Pacifico (Cute)</option>
+                        <option value="DM Sans">DM Sans (Clean)</option>
+                        <option value="Space Mono">Space Mono (Retro)</option>
+                      </select>
+                    </div>
+                    <div class="text-opt-group">
+                      <label>Ukuran <span id="fontSizeVal">32px</span></label>
+                      <input type="range" min="12" max="80" value="32" id="fontSizeSlider" oninput="updateTextStyle()">
+                    </div>
+                    <div class="text-opt-row">
+                      <div class="text-opt-group half">
+                        <label>Warna Teks</label>
+                        <input type="color" id="textColor" value="#ffffff" onchange="updateTextStyle()">
+                      </div>
+                      <div class="text-opt-group half">
+                        <label>Warna BG</label>
+                        <input type="color" id="textBgColor" value="#ff6b9d" onchange="updateTextStyle()">
+                      </div>
+                    </div>
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="textBgToggle" onchange="updateTextStyle()"> Pakai background
+                    </label>
+                  </div>
+                  <button class="btn-add-text" onclick="addText()">➕ Tambah Teks ke Foto</button>
+                  <div class="text-list" id="textList"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Canvas area -->
+            <div class="decor-canvas-area">
+              <div class="canvas-container" id="canvasContainer">
+                <canvas id="decorCanvas"></canvas>
+                <div id="stickerLayer" class="sticker-layer"></div>
+                <div id="textLayer" class="text-layer"></div>
+                <div class="preview-badge-sm">PREVIEW</div>
+              </div>
+              <div class="canvas-controls">
+                <button onclick="undoLast()" class="ctrl-btn">↩ Undo</button>
+                <button onclick="clearDecorations()" class="ctrl-btn danger">🗑 Reset Semua</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button onclick="goToStep(2)" class="btn-back">← Kembali</button>
+            <button onclick="goToStep(4)" class="btn-primary">Checkout ➜</button>
+          </div>
+        </div>
+
+        <!-- ── STEP 4: Checkout ── -->
+        <div class="booth-step" id="step4">
+          <div class="checkout-layout">
+            <div class="checkout-preview">
+              <h3>👁 Preview Hasil</h3>
+              <div class="checkout-canvas-wrap">
+                <canvas id="checkoutCanvas"></canvas>
+                <div class="big-watermark">PREVIEW<br><small>Bayar untuk Download HD</small></div>
+              </div>
+              <p class="checkout-note">⚡ Foto HD tanpa watermark ter-download setelah pembayaran</p>
+            </div>
+            <div class="checkout-form">
+              <h3>🛍 Ringkasan Pesanan</h3>
+              <div class="order-summary">
+                <div class="order-row">
+                  <span>Tema</span>
+                  <span id="orderThemeName" class="order-val">Kawaii Gemoy</span>
+                </div>
+                <div class="order-row">
+                  <span>Layout</span>
+                  <span id="orderLayoutName" class="order-val">Single</span>
+                </div>
+                <div class="order-divider"></div>
+                <div class="order-row">
+                  <span>Harga</span>
+                  <span id="orderBasePrice">Rp 5.000</span>
+                </div>
+                <div class="order-row discount-row" id="discountRow" style="display:none">
+                  <span>Diskon 🎉</span>
+                  <span id="discountAmount" class="discount-text">- Rp 0</span>
+                </div>
+                <div class="order-row total-row">
+                  <strong>Total</strong>
+                  <strong id="orderTotal">Rp 5.000</strong>
+                </div>
+              </div>
+
+              <div class="promo-section">
+                <label class="form-label">🏷 Kode Promo</label>
+                <div class="promo-input-wrap">
+                  <input type="text" id="promoInput" placeholder="SNAPGRATIS"
+                    oninput="this.value=this.value.toUpperCase()">
+                  <button onclick="applyPromo()" class="btn-promo">Pakai</button>
+                </div>
+                <div class="promo-message" id="promoMessage"></div>
+                <div class="promo-hints"><small>💡 Masukan kode promo!
+                    <!--<code>SNAPGRATIS</code> atau <code>DISKON50</code>--></small>
+                </div>
+              </div>
+
+              <div class="customer-info">
+                <label class="form-label">📧 Email konfirmasi</label>
+                <input type="email" id="customerEmail" placeholder="email@kamu.com">
+              </div>
+
+              <button class="btn-pay" onclick="initPayment()" id="payBtn">
+                <span>💳</span> Bayar via Midtrans
+              </button>
+
+              <div class="payment-logos">
+                <span class="pm-label">GoPay</span>
+                <span class="pm-label">OVO</span>
+                <span class="pm-label">Dana</span>
+                <span class="pm-label">BCA</span>
+                <span class="pm-label">Mandiri</span>
+                <span class="pm-more">+100 lainnya</span>
+              </div>
+              <p class="secure-note">🔒 Pembayaran 100% aman via Midtrans. Foto tidak disimpan di server.</p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button onclick="goToStep(3)" class="btn-back">← Kembali</button>
+          </div>
+        </div>
+
+        <!-- ── STEP 5: Success ── -->
+        <div class="booth-step" id="step5">
+          <div class="success-screen">
+            <div class="success-anim">🎉</div>
+            <h2>Pembayaran Berhasil!</h2>
+            <p>Foto HD kamu sedang diproses...</p>
+            <div class="download-progress-wrap">
+              <div class="download-progress-track">
+                <div class="download-progress-bar" id="progressBar"></div>
+              </div>
+              <span id="downloadStatus">Memproses foto...</span>
+            </div>
+            <button id="downloadBtn" class="btn-download" style="display:none" onclick="downloadFinal()">
+              ⬇️ Download Foto HD
+            </button>
+            <button onclick="startOver()" class="btn-ghost" style="margin-top:1rem">
+              📸 Buat Foto Lagi
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /booth-app -->
+    </div><!-- /container-wide -->
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">💬 Review</span>
+        <h2>Mereka Sudah Coba!</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testi-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Tema kawaii-nya gemes banget! Foto jadi langsung aesthetic dan bisa share ke IG. Recommended!"</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#ffb3d1">A</div>
+            <div><strong>Alya R.</strong><small>@alyaesthetic</small></div>
+          </div>
+        </div>
+        <div class="testi-card featured-testi">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Murah tapi kualitas HD! Stiker drag-drop seru banget, bisa custom sesuka hati. Udah repeat 5×!"</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#b3d9ff">R</div>
+            <div><strong>Rizky M.</strong><small>@rizkyvibes</small></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Filter AI-nya natural banget hasilnya. Foto tidak disimpan di server jadi privasi aman!"</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#d4b3ff">S</div>
+            <div><strong>Sari K.</strong><small>@sarikece</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">❓ FAQ</span>
+        <h2>Pertanyaan Umum</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Apakah foto saya disimpan di server? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>Tidak! Semua proses editing terjadi di browser kamu (client-side). Foto tidak pernah dikirim ke server
+              kami. Privasi kamu 100% terjaga.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Kenapa ada watermark di preview? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>Watermark hanya ada di preview resolusi rendah. Setelah pembayaran berhasil, foto HD tanpa watermark
+              langsung ter-download ke perangkat kamu.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Metode pembayaran apa saja? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>Kami pakai Midtrans yang mendukung 100+ metode: GoPay, OVO, Dana, LinkAja, kartu kredit, transfer bank,
+              Indomaret, Alfamart, dan masih banyak lagi.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Berapa resolusi foto yang didownload? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">
+            <p>Single/Polaroid: 2000px. Photo Strip: 1000–6000px (tergantung baris). Grid/Collage: 2000–3000px. Semua
+              cukup tajam untuk cetak ukuran 4R.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo footer-logo" href="#">📸 FotoinAja</a>
+          <p>Foto booth digital aesthetic untuk anak muda Indonesia. Dibuat dengan 💕 di Indonesia.</p>
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Produk</h4>
+          <a href="#themes">Semua Tema</a>
+          <a href="#booth">Mulai Foto</a>
+        </div>
+        <div class="footer-links">
+          <h4>Bantuan</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Kontak Kami</a>
+          <a href="#">Kebijakan Privasi</a>
+        </div>
+        <div class="footer-links">
+          <h4>Kerja Sama</h4>
+          <a href="#">Influencer</a>
+          <a href="#">Event &amp; Wedding</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 FotoinAja. Hak cipta dilindungi. | Ditenagai oleh Midtrans</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MIDTRANS SNAP -->
+  <script src="https://app.midtrans.com/snap/snap.js" data-client-key="Mid-client-Zynxgxkq4ntIWD8g"></script>
+
+  <script src="./js/themes.js"></script>
+  <script src="./js/canvas.js"></script>
+  <script src="./js/stickers.js"></script>
+  <script src="./js/filters.js"></script>
+  <script src="./js/payment.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
